@@ -1,0 +1,88 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>net6.0-windows</TargetFrameworks>
+    <Nullable>enable</Nullable>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <PlatformTarget>x64</PlatformTarget>
+    <OutputType>Library</OutputType>
+    <UseWPF>True</UseWPF>
+    <Platforms>AnyCPU;x64</Platforms>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="FFmpeg\avcodec-58.dll" />
+    <None Remove="FFmpeg\avdevice-58.dll" />
+    <None Remove="FFmpeg\avformat-58.dll" />
+    <None Remove="FFmpeg\avutil-56.dll" />
+    <None Remove="FFmpeg\postproc-55.dll" />
+    <None Remove="FFmpeg\swresample-3.dll" />
+    <None Remove="FFmpeg\swscale-5.dll" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="FFmpeg\avcodec-58.dll">
+      <CustomToolNamespace>FFmpeg</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FFmpeg\avdevice-58.dll">
+      <CustomToolNamespace>FFmpeg</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FFmpeg\avformat-58.dll">
+      <CustomToolNamespace>FFmpeg</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FFmpeg\avutil-56.dll">
+      <CustomToolNamespace>FFmpeg</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FFmpeg\postproc-55.dll">
+      <CustomToolNamespace>FFmpeg</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FFmpeg\swresample-3.dll">
+      <CustomToolNamespace>FFmpeg</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FFmpeg\swscale-5.dll">
+      <CustomToolNamespace>FFmpeg</CustomToolNamespace>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- Reference all of Windows Forms -->
+    <FrameworkReference Include="Microsoft.WindowsDesktop.App" />
+  </ItemGroup>
+
+ 
+
+
+  <ItemGroup>
+   <PackageReference Include="FFmpeg.AutoGen" Version="4.4.1.1" />
+<PackageReference Include="Vortice.D3DCompiler" Version="2.1.1-beta4" />
+<PackageReference Include="Vortice.Direct3D11" Version="2.1.1-beta4" />
+<PackageReference Include="Vortice.Mathematics" Version="1.3.24" />
+<PackageReference Include="Vortice.MediaFoundation" Version="2.1.1-beta4" />
+<PackageReference Include="Vortice.XAudio2" Version="2.1.1-beta4" />
+<PackageReference Include="VST.NET2-Plugin" Version="2.1.0" />
+  </ItemGroup>
+
+ 
+
+
+  <ItemGroup>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+ 
+
+
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+</Project>
